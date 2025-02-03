@@ -13,6 +13,7 @@ langchain-huggingface = "^0.1.2"
 gigachain = "^0.2.16"
 gigachain-community = "^0.2.16.post3"
 elasticsearch = "^8.17.1"
+langchain-elasticsearch = "^0.3.2"
 
 
 [build-system]
