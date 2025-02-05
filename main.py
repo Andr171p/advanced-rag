@@ -1,6 +1,6 @@
 import asyncio
 
-from src.services.chat import ChatService
+from src.services import ChatService
 
 
 question = "За какие достижения дают дополнительные баллы?"
