@@ -1,4 +1,4 @@
-import asyncio
+'''import asyncio
 
 from src.services import ChatService
 
@@ -12,4 +12,4 @@ async def main() -> None:
     print(answer)
     
     
-asyncio.run(main())
+asyncio.run(main())'''

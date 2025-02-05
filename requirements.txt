@@ -1,0 +1,14 @@
+uvicorn~=0.34.0
+fastapi~=0.115.8
+pydantic~=2.10.6
+pydantic-settings~=2.7.1
+python-dotenv~=1.0.1
+dishka~=1.4.2
+elasticsearch~=8.17.1
+gigachain~=0.2.16
+gigachain-community~=0.2.16.post3
+langchain~=0.3.17
+langchain-elasticsearch~=0.3.2
+langchain-gigachat~=0.3.3
+langchain-huggingface~=0.1.2
+sentence-transformers~=3.4.1

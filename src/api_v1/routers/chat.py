@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 
 from dishka.integrations.fastapi import FromDishka, DishkaRoute
 
-from src.schemas import QuestionSchema
+from src.schemas import QuestionSchema, AnswerSchema
 from src.services import ChatService
 
 
@@ -14,7 +14,7 @@ chat_router = APIRouter(
 )
 
 
-@chat_router.post(path="/answer/", response_model=...)
+@chat_router.post(path="/answer/", response_model=AnswerSchema)
 async def answer_on_question(
     question: QuestionSchema,
     chat_service: FromDishka[ChatService]

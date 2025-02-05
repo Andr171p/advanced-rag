@@ -1,6 +1,15 @@
 version: "3.8"
 
 services:
+  fastapi:
+    build: .
+    command: uvicorn src.api_v1.app:app --host 0.0.0.0
+    volumes:
+      - .:/rag_api
+    ports:
+      - "8000:8000"
+    depends_on:
+      - elastic
   elastic:
     image: elasticsearch:8.16.1
     environment:
