@@ -19,7 +19,7 @@ class EmbeddingsSettings(BaseSettings):
 
 class ElasticSettings(BaseSettings):
     url: str = "http://localhost:9200"
-    username: str = "elastic"
+    user: str = "elastic"
     password: str = "password"
     
     vector_index_name: str = "tyuiu_index"

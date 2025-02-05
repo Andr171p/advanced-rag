@@ -32,18 +32,18 @@ def _get_embeddings(
     
 def _get_elastic_client(
     url: str = settings.elastic.url,
-    username: str = settings.elastic.username,
+    user: str = settings.elastic.user,
     password: str = settings.elastic.password
 ) -> Elasticsearch:
     return Elasticsearch(
         hosts=url, 
-        basic_auth=(username, password)
+        basic_auth=(user, password)
     )
 
 
 def _get_elastic_vector_store(
     url: str = settings.elastic.url,
-    username: str = settings.elastic.username,
+    user: str = settings.elastic.user,
     password: str = settings.elastic.password,
     index_name: str = settings.elastic.vector_index_name,
     embeddings: "Embeddings" = _get_embeddings(),
@@ -52,7 +52,7 @@ def _get_elastic_vector_store(
         es_url=url,
         index_name=index_name,
         embedding=embeddings,
-        es_user=username,
+        es_user=user,
         es_password=password
     )
 
@@ -85,14 +85,16 @@ def get_ensemble_retriever() -> "BaseRetriever":
     )
     
     
-def get_chat_prompt(tamplate_path: str = settings.static.prompt) -> ChatPromptTemplate:
-    return ChatPromptTemplate.from_template(tamplate_path)
+def get_chat_prompt(
+    template_path: str = settings.static.prompt
+) -> ChatPromptTemplate:
+    return ChatPromptTemplate.from_template(load_txt(template_path))
 
 
 def get_gigachat_model(
     auth_key: str = settings.gigachat.auth_key,
     scope: str = settings.gigachat.scope,
-    model_name: str = settings.model.name,
+    model_name: str = settings.gigachat.model_name,
 ) -> GigaChat:
     return GigaChat(
         credentials=auth_key,

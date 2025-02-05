@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     from langchain_core.runnables.base import Runnable
 
 
-class RAGChain:
+class RAGChainFactory:
     def __init__(
         self,
         retriever: "BaseRetriever",
@@ -24,7 +24,7 @@ class RAGChain:
         self._model = model
         self._parser = parser
         
-    def create_chain(
+    def create_rag_chain(
         self, 
         parse_document_context_func: Callable[[List["Document"]], str]
     ) -> "Runnable":
