@@ -7,6 +7,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_gigachat.chat_models import GigaChat
 from langchain_core.output_parsers.string import StrOutputParser
 
+from src.rag.helpers import get_gigachat_auth_key
 from src.misc.file_loaders import load_txt
 from src.config import settings
 
@@ -53,7 +54,10 @@ prompt = ChatPromptTemplate.from_template(load_txt(settings.static.prompt))
 
 
 model = GigaChat(
-    credentials=settings.gigachat.auth_key,
+    credentials=get_gigachat_auth_key(
+        client_id=settings.gigachat.client_id, 
+        client_secret=settings.gigachat.client_secret
+    ),
     scope=settings.gigachat.scope,
     model=settings.gigachat.model_name,
     verify_ssl_certs=False,

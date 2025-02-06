@@ -34,6 +34,9 @@ class GigaChatSettings(BaseSettings):
     auth_key: str = os.getenv("GIGACHAT_AUTH_KEY")
     scope: str = os.getenv("GIGACHAT_SCOPE")
     model_name: str = os.getenv("GIGACHAT_MODEL_NAME")
+    
+    client_id: str = os.getenv("CLIENT_ID")
+    client_secret: str = os.getenv("CLIENT_SECRET")
 
 
 class Settings(BaseSettings):
