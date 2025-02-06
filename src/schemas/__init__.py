@@ -1,7 +1,6 @@
 __all__ = (
-    "QuestionSchema",
-    "AnswerSchema"
+    "ChatQuestion",
+    "ChatAnswer"
 )
 
-from src.schemas.question import QuestionSchema
-from src.schemas.answer import AnswerSchema
+from src.schemas.chat import ChatQuestion, ChatAnswer

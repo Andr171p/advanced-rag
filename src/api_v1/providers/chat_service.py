@@ -5,5 +5,5 @@ from src.services import ChatService
 
 class ChatServiceProvider(Provider):
     @provide(scope=Scope.APP)
-    def get_chat_service() -> ChatService:
+    def get_chat_service(self) -> ChatService:
         return ChatService()
