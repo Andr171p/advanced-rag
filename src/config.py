@@ -18,9 +18,13 @@ class EmbeddingsSettings(BaseSettings):
 
 
 class ElasticSettings(BaseSettings):
-    url: str = "http://localhost:9200"
+    '''url: str = "http://localhost:9200"
     user: str = "elastic"
-    password: str = "password"
+    password: str = "password"'''
+    
+    url: str = os.getenv("ELASTIC_URL")
+    user: str = os.getenv("ELASTIC_USERNAME")
+    password: str = os.getenv("ELASTIC_PASSWORD")
     
     vector_index_name: str = "tyuiu_index"
     docs_index_name: str = "docs-tyuiu-index"
@@ -35,8 +39,8 @@ class GigaChatSettings(BaseSettings):
     scope: str = os.getenv("GIGACHAT_SCOPE")
     model_name: str = os.getenv("GIGACHAT_MODEL_NAME")
     
-    client_id: str = os.getenv("CLIENT_ID")
-    client_secret: str = os.getenv("CLIENT_SECRET")
+    client_id: str = os.getenv("GIGACHAT_CLIENT_ID")
+    client_secret: str = os.getenv("GIGACHAT_CLIENT_SECRET")
 
 
 class Settings(BaseSettings):
