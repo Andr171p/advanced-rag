@@ -1,4 +1,4 @@
-from src.rag.provider import get_rag_chain
+from src.rag import get_rag_chain
 
 
 class ChatService:

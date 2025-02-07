@@ -1,9 +1,9 @@
 from pydantic import BaseModel
 
 
-class ChatQuestion(BaseModel):
+class QuestionSchema(BaseModel):
     question: str
     
     
-class ChatAnswer(BaseModel):
+class AnswerSchema(BaseModel):
     answer: str
